@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         body {
             margin: 0;
             display: flex;
@@ -20,13 +14,18 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb, #d4fc79, #96e6a1);
-            background-size: 300% 300%;
-            animation: gradientAnimation 15s ease infinite;
+            background: linear-gradient(135deg, #e07a7e, #e3b1c0, #e4a7cf, #8194c6, #9ec8d8, #b7e373);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #fff;
             font-family: 'Poppins', sans-serif;
             font-size: 2rem;
             text-align: center;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .divider {
             width: 80%;
@@ -38,9 +37,16 @@
         .icons {
             margin-top: 20px;
             font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .icons a {
-            margin: 0 15px;
             color: #fff;
             text-decoration: none;
             transition: color 0.3s, transform 0.3s;
@@ -48,6 +54,14 @@
         .icons a:hover {
             color: #000;
             transform: scale(1.2);
+        }
+        .icons a:hover + .icon-label, .icons a:hover .icon-label {
+            color: #000;
+        }
+        .icon-label {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
         }
         .email {
             margin-top: 20px;
@@ -64,12 +78,18 @@
     <h1>Jan Svášek</h1>
     <div class="divider"></div>
     <div class="icons">
-        <a href="https://www.youtube.com/watch?v=D6KSZuwaBSI&t=97s" target="_blank" title="Rozhovor na YouTube">
-            <i class="fas fa-home"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/jan-sv%C3%A1%C5%A1ek/?originalSubdomain=cz" target="_blank" title="LinkedIn">
-            <i class="fas fa-server"></i>
-        </a>
+        <div class="icon-container">
+            <a href="https://www.youtube.com/watch?v=D6KSZuwaBSI&t=97s" target="_blank" title="Rozhovor na YouTube">
+                <i class="fas fa-home"></i>
+            </a>
+            <div class="icon-label">Real Estate</div>
+        </div>
+        <div class="icon-container">
+            <a href="https://www.linkedin.com/in/jan-sv%C3%A1%C5%A1ek/?originalSubdomain=cz" target="_blank" title="LinkedIn">
+                <i class="fas fa-server"></i>
+            </a>
+            <div class="icon-label">Hosting | IT</div>
+        </div>
     </div>
     <div class="divider"></div>
     <a href="mailto:jan@svasek.me" class="email">jan@svasek.me</a>
